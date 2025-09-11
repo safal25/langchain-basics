@@ -10,7 +10,7 @@ To run this file command: śnpm run lcel
 import { ChatOpenAI} from "@langchain/openai";
 import { HumanMessage, SystemMessage } from "@langchain/core/messages";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
-import { RunnableSequence, RunnableParallel } from "@langchain/core/runnables";
+import { RunnableSequence, RunnableLambda } from "@langchain/core/runnables";
 
 const model = new ChatOpenAI({ model: "gpt-4.1" });
 
@@ -45,3 +45,11 @@ const response2 = await chainUsingPipe.invoke({
 
 console.log("/**** Runnable Sequence using Pipe Response ****/");
 console.log(response2);
+
+//Runnable lambda function
+// this can be used to create custom runnables and if you want to call some function to get an output that can be used as an input to another runnable like model or prompt template
+const someFunc = RunnableLambda.from((input) => {
+  return input;
+});
+
+const chainLambda = someFunc.pipe(runnable1);
