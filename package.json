@@ -9,7 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --env-file=.env index.js",
-    "streaming": "node --env-file=.env streaming.js"
+    "streaming": "node --env-file=.env streaming.js",
+    "lcel" : "node --env-file=.env LCEL.js",
+    "promptemplate": "node --env-file=.env promptemplate.js"
   },
   "dependencies": {
     "@langchain/core": "^0.3.75",

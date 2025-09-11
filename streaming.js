@@ -2,6 +2,7 @@
 Streaming API is used when you want to process or show responses as it becomes available, rather than waiting for the entire response to be ready. 
 This is particularly useful for handling large responses or real-time chat conversations.
 Any component in langchain that implements the Runnable interface provides method from streaming.
+To run this example use the command: npm run streaming
 */
 
 import { ChatOpenAI} from "@langchain/openai";
